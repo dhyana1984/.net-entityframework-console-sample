@@ -1,0 +1,10 @@
+D:\Github Repository\DotNet\EntityFramework\EntityFrameworkSample\EntityFrameworkSample\bin\Debug\EntityFrameworkSample.exe.config
+D:\Github Repository\DotNet\EntityFramework\EntityFrameworkSample\EntityFrameworkSample\bin\Debug\EntityFrameworkSample.exe
+D:\Github Repository\DotNet\EntityFramework\EntityFrameworkSample\EntityFrameworkSample\bin\Debug\EntityFrameworkSample.pdb
+D:\Github Repository\DotNet\EntityFramework\EntityFrameworkSample\EntityFrameworkSample\bin\Debug\EntityFramework.dll
+D:\Github Repository\DotNet\EntityFramework\EntityFrameworkSample\EntityFrameworkSample\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github Repository\DotNet\EntityFramework\EntityFrameworkSample\EntityFrameworkSample\bin\Debug\EntityFramework.xml
+D:\Github Repository\DotNet\EntityFramework\EntityFrameworkSample\EntityFrameworkSample\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github Repository\DotNet\EntityFramework\EntityFrameworkSample\EntityFrameworkSample\obj\Debug\EntityFrameworkSample.csprojResolveAssemblyReference.cache
+D:\Github Repository\DotNet\EntityFramework\EntityFrameworkSample\EntityFrameworkSample\obj\Debug\EntityFrameworkSample.exe
+D:\Github Repository\DotNet\EntityFramework\EntityFrameworkSample\EntityFrameworkSample\obj\Debug\EntityFrameworkSample.pdb
