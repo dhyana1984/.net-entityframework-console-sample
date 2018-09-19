@@ -48,8 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\RelationShipSample.cs" />
+    <Compile Include="Entity\Course.cs" />
+    <Compile Include="Entity\Student.cs" />
+    <Compile Include="Entity\StudentCourse.cs" />
+    <Compile Include="Map\CourseMap.cs" />
     <Compile Include="Map\CustomerMap.cs" />
     <Compile Include="Map\OrderMap.cs" />
+    <Compile Include="Map\StudentsMap.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
     <Compile Include="Model\Blog.cs" />

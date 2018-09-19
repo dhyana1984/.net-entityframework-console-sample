@@ -38,5 +38,9 @@ namespace EntityFrameworkSample.Model
         public DbSet<User> Users { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Course> Courses { get; set; }
+
+        public DbSet<StudentContract> StudentContracts { get; set; }
     }
 }

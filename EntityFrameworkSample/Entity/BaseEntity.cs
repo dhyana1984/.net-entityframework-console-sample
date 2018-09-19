@@ -11,5 +11,11 @@ namespace EntityFrameworkSample.Entity
       public int Id { set; get; }
       public DateTime CreateTime { get; set; }
       public DateTime ModifiedTime { get; set; }
+
+      public BaseEntity()
+      {
+          CreateTime = DateTime.Now;
+          ModifiedTime = DateTime.Now;
+      }
     }
 }
