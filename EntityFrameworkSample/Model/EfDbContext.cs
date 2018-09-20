@@ -18,9 +18,7 @@ namespace EntityFrameworkSample.Model
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Blog>().Property(t => t.Name).HasMaxLength(50);
-            modelBuilder.Entity<Blog>().Property(t => t.Char).HasColumnType("char").HasMaxLength(11);
-            modelBuilder.Entity<Blog>().Property(t => t.CreatedTime).HasColumnType("DATETIME2");
+           
        
 
             //注册Map类

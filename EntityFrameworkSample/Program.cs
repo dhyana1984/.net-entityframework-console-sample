@@ -12,6 +12,28 @@ namespace EntityFrameworkSample
     {
         static void Main(string[] args)
         {
+            using (var db = new EfDbContext())
+            {
+
+                Student student = new Student
+                {
+                    Name = "Jack",
+                    Age = 22,
+                    Contract = new StudentContract
+                    {
+                        ContractNumber="13333333333",
+                        
+                    }
+                };
+
+
+
+                db.Students.Add(student);
+                db.SaveChanges();
+
+
+
+            }
 
         }
     }

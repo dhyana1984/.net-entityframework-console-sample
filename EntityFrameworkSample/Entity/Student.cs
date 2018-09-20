@@ -10,6 +10,8 @@ namespace EntityFrameworkSample.Entity
     {
       public string Name { get; set; }
       public byte Age { get; set; }
+
+      private string adress { get; set; }
       //隐式配置多对多
       //public virtual ICollection<Course> Courses { get; set; }
 

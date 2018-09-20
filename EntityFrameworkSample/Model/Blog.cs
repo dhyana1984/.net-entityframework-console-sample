@@ -9,13 +9,13 @@ namespace EntityFrameworkSample.Model
    public class Blog
     {
        public int Id { get; set; }
-       public string Name { get; set; }
-       public string Url { get; set; }
-       public DateTime? CreatedTime { get; set; }
+       public string BlogName { get; set; }
 
-       public double Double { get; set; }
-       public float Float { get; set; }
+       public string BlogIntroduction { get; set; }
+       public string Signature { get; set; }
 
-       public string Char { get; set; }
+       public string BlogUrl { get; set; }
+
+
     }
 }
