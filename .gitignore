@@ -3,16 +3,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-#WebConfig
-*.config
-App.config
-
-#EXE
-*.exe
-
-#bin
-.net-entityframework-console-sample/bin/
-.net-entityframework-console-sample/obj/
 
 # User-specific files
 *.suo
@@ -342,4 +332,7 @@ ASALocalRun/
 
 # Folders
 OpenSource
+
+#Config
+*.config
 
