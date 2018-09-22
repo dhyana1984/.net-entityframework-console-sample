@@ -13,14 +13,15 @@ namespace EntityFrameworkSample.Model
 {
     public class EfDbContext : DbContext
     {
-        public EfDbContext():base("name=ConnectionString")
+        public EfDbContext()
+            : base("name=ConnectionString")
         {
-<<<<<<< HEAD
-          //  Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EfDbContext>());
+
+            //  Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EfDbContext>());
             //Configuration.LazyLoadingEnabled = false; //关闭延迟加载
 
 
-=======
+
             ////数据库不存在就创建
             //Database.SetInitializer(new CreateDatabaseIfNotExists<EfDbContext>());
 
@@ -29,7 +30,6 @@ namespace EntityFrameworkSample.Model
 
             ////如果EF检测到数据库模型发生了改变，将更新模型
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EfDbContext>());
->>>>>>> 6995dda6826bb55e7290cac25de96a57e3638666
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
