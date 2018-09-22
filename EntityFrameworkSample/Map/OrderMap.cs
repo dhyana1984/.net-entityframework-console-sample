@@ -13,7 +13,7 @@ namespace EntityFrameworkSample.Map
     {
         public OrderMap()
         {
-            ToTable("Oders");
+            ToTable("Orders");
             HasKey(t => t.Id);
 
             Property(t => t.Quanatity);

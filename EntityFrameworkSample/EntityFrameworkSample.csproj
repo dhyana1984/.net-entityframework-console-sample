@@ -91,7 +91,16 @@
     <Compile Include="ChrisMigrations\201809200837052_AddBlogUrl1.Designer.cs">
       <DependentUpon>201809200837052_AddBlogUrl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChrisMigrations\201809221833396_ModifyOrder.cs" />
+    <Compile Include="ChrisMigrations\201809221833396_ModifyOrder.Designer.cs">
+      <DependentUpon>201809221833396_ModifyOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChrisMigrations\201809221838092_ModifyOrderTableName.cs" />
+    <Compile Include="ChrisMigrations\201809221838092_ModifyOrderTableName.Designer.cs">
+      <DependentUpon>201809221838092_ModifyOrderTableName.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChrisMigrations\Configuration.cs" />
+    <Compile Include="Client\LazyLoading.cs" />
     <Compile Include="Client\RelationShipSample.cs" />
     <Compile Include="Entity\Course.cs" />
     <Compile Include="Entity\Employee.cs" />
@@ -109,6 +118,7 @@
     <Compile Include="Model\Blog.cs" />
     <Compile Include="Entity\Customer.cs" />
     <Compile Include="Entity\Order.cs" />
+    <Compile Include="Model\CustomerInfo.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\EfDbContext.cs" />
     <Compile Include="Program.cs" />
@@ -136,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChrisMigrations\201809200837052_AddBlogUrl1.resx">
       <DependentUpon>201809200837052_AddBlogUrl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChrisMigrations\201809221833396_ModifyOrder.resx">
+      <DependentUpon>201809221833396_ModifyOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChrisMigrations\201809221838092_ModifyOrderTableName.resx">
+      <DependentUpon>201809221838092_ModifyOrderTableName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

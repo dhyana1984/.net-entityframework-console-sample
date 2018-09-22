@@ -15,7 +15,7 @@ namespace EntityFrameworkSample
         {
             using (var db = new EfDbContext())
             {
-
+                //增加测试数据
                 //var customer = new Customer
                 //{
                 //    Name = "Tom",
@@ -37,26 +37,14 @@ namespace EntityFrameworkSample
                 //db.Customers.Add(customer);
                 //db.SaveChanges();
 
-                var customer = db.Customers.FirstOrDefault();
+                //新建Model用来查询关联查询结果
+                var customerInfo = db.Database.SqlQuery<CustomerInfo>("select c.Id, c.Name, c.Email,o.Price,o.Quanatity from Customers c " +
+                    " join Orders o on c.id = o.customerid").ToList();
 
-                //避免序列化的时候循环序列化，Customer里面有Order，Order里面有Customer，用投影解决该问题
-                var transferCustomer = new Customer()
-                {
-                    CreateTime = customer.CreateTime,
-                    Email = customer.Email,
-                    ModifiedTime = customer.ModifiedTime,
-                    Name = customer.Name,
-                    Orders = customer.Orders.Select(t => new Order()
-                    {
-                        CreateTime = t.CreateTime,
-                        Id = t.Id,
-                        ModifiedTime = t.ModifiedTime,
-                        Price = t.Price,
-                        Quanatity = t.Quanatity
-                    }).ToList()
+                //执行存储过程
+                var customers = db.Database.SqlQuery<Customer>("SP_GetCustomers").ToList();
+     
 
-                };
-                var serializeCustmer = JsonConvert.SerializeObject(transferCustomer);
 
 
 
