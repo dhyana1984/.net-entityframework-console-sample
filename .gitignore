@@ -3,6 +3,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+
 # User-specific files
 *.suo
 *.user
@@ -332,3 +333,9 @@ ASALocalRun/
 # Folders
 OpenSource
 
+<<<<<<< HEAD
+=======
+#Config
+*.config
+
+>>>>>>> 6995dda6826bb55e7290cac25de96a57e3638666
