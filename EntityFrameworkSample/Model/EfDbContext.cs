@@ -14,7 +14,10 @@ namespace EntityFrameworkSample.Model
     {
         public EfDbContext():base("name=ConnectionString")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EfDbContext>());
+          //  Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EfDbContext>());
+            //Configuration.LazyLoadingEnabled = false; //关闭延迟加载
+
+
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
