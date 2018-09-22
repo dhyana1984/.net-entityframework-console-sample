@@ -11,8 +11,8 @@ App.config
 *.exe
 
 #bin
-bin/
-obj/
+.net-entityframework-console-sample/bin/
+.net-entityframework-console-sample/obj/
 
 # User-specific files
 *.suo
