@@ -9,12 +9,12 @@ namespace EntityFrameworkSample.Entity
   public  class BaseEntity
     {
       public int Id { set; get; }
-      public DateTime CreateTime { get; set; }
-      public DateTime ModifiedTime { get; set; }
+      public DateTime? CreateTime { get; set; }
+      public DateTime? ModifiedTime { get; set; }
 
       public BaseEntity()
       {
-          CreateTime = DateTime.Now;
+         // CreateTime = DateTime.Now;
           ModifiedTime = DateTime.Now;
       }
     }

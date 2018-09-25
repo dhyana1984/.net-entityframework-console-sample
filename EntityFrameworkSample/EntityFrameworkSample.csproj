@@ -99,9 +99,18 @@
     <Compile Include="ChrisMigrations\201809221838092_ModifyOrderTableName.Designer.cs">
       <DependentUpon>201809221838092_ModifyOrderTableName.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChrisMigrations\201809241800513_modifyCreteTimeModifyTime.cs" />
+    <Compile Include="ChrisMigrations\201809241800513_modifyCreteTimeModifyTime.Designer.cs">
+      <DependentUpon>201809241800513_modifyCreteTimeModifyTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChrisMigrations\201809250909149_addCustomerSP.cs" />
+    <Compile Include="ChrisMigrations\201809250909149_addCustomerSP.Designer.cs">
+      <DependentUpon>201809250909149_addCustomerSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChrisMigrations\Configuration.cs" />
     <Compile Include="Client\LazyLoading.cs" />
     <Compile Include="Client\RelationShipSample.cs" />
+    <Compile Include="Client\SqlQuery.cs" />
     <Compile Include="Entity\Course.cs" />
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\EmployeePhoto.cs" />
@@ -152,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChrisMigrations\201809221838092_ModifyOrderTableName.resx">
       <DependentUpon>201809221838092_ModifyOrderTableName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChrisMigrations\201809241800513_modifyCreteTimeModifyTime.resx">
+      <DependentUpon>201809241800513_modifyCreteTimeModifyTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChrisMigrations\201809250909149_addCustomerSP.resx">
+      <DependentUpon>201809250909149_addCustomerSP.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

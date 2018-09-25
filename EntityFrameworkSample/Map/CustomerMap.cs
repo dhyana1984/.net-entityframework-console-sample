@@ -21,6 +21,8 @@ namespace EntityFrameworkSample.Map
            Property(t => t.Email).HasColumnType("VARCHAR").HasMaxLength(50).IsRequired();
            Property(t => t.CreateTime);
            Property(t => t.ModifiedTime);
+
+            MapToStoredProcedures();//自动生成存储过程，需要迁移 
        }
     }
 }

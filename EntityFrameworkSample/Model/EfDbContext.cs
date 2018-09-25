@@ -18,7 +18,7 @@ namespace EntityFrameworkSample.Model
         {
 
             //  Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EfDbContext>());
-           Configuration.LazyLoadingEnabled = false; //关闭延迟加载
+         //  Configuration.LazyLoadingEnabled = false; //关闭延迟加载
            //Configuration.AutoDetectChangesEnabled = true;
 
 
