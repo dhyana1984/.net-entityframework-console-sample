@@ -57,9 +57,17 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.10\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -107,15 +115,24 @@
     <Compile Include="ChrisMigrations\201809250909149_addCustomerSP.Designer.cs">
       <DependentUpon>201809250909149_addCustomerSP.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChrisMigrations\201809270822401_addPosts.cs" />
+    <Compile Include="ChrisMigrations\201809270822401_addPosts.Designer.cs">
+      <DependentUpon>201809270822401_addPosts.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChrisMigrations\Configuration.cs" />
     <Compile Include="Client\LazyLoading.cs" />
     <Compile Include="Client\RelationShipSample.cs" />
     <Compile Include="Client\SqlQuery.cs" />
+    <Compile Include="Configuration\DbContextConfiguration.cs" />
+    <Compile Include="EFLog\NLogCommandInterceptor.cs" />
+    <Compile Include="EFLog\SingleLineFormmatter.cs" />
     <Compile Include="Entity\Course.cs" />
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\EmployeePhoto.cs" />
+    <Compile Include="Entity\Post.cs" />
     <Compile Include="Entity\Student.cs" />
     <Compile Include="Entity\StudentCourse.cs" />
+    <Compile Include="EFLog\MyLog.cs" />
     <Compile Include="Map\BlogMap.cs" />
     <Compile Include="Map\CourseMap.cs" />
     <Compile Include="Map\CustomerMap.cs" />
@@ -124,7 +141,7 @@
     <Compile Include="Map\StudentsMap.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
-    <Compile Include="Model\Blog.cs" />
+    <Compile Include="Entity\Blog.cs" />
     <Compile Include="Entity\Customer.cs" />
     <Compile Include="Entity\Order.cs" />
     <Compile Include="Model\CustomerInfo.cs" />
@@ -135,6 +152,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChrisMigrations\201809250909149_addCustomerSP.resx">
       <DependentUpon>201809250909149_addCustomerSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChrisMigrations\201809270822401_addPosts.resx">
+      <DependentUpon>201809270822401_addPosts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -56,7 +56,7 @@ namespace EntityFrameworkSample.Model
         public DbSet<Order> Orders { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
-
+        public DbSet<Post> Posts { get; set; }
         public DbSet<StudentContract> StudentContracts { get; set; }
     }
 

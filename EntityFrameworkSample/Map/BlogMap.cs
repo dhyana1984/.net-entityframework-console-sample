@@ -1,4 +1,5 @@
-﻿using EntityFrameworkSample.Model;
+﻿using EntityFrameworkSample.Entity;
+using EntityFrameworkSample.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
@@ -13,10 +14,8 @@ namespace EntityFrameworkSample.Map
        public BlogMap()
        {
            ToTable("Blogs");
-           Property(t => t.BlogName).HasMaxLength(100);
-           Property(t => t.Signature).HasMaxLength(50);
-           Property(t => t.BlogIntroduction).HasMaxLength(100);
-           Property(t => t.BlogUrl).HasMaxLength(100);
+           Property(t => t.Title).HasMaxLength(100);
+
        }
     }
 }
