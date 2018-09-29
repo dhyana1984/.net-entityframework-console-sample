@@ -58,7 +58,8 @@ namespace EntityFrameworkSample.Model
         public DbSet<Course> Courses { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<StudentContract> StudentContracts { get; set; }
-    }
+        public DbSet<Error> Errors { get; set; }
+    } 
 
     //自定义全局约定
     public class CustomerKeyConvention:Convention

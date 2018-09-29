@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NLog;
+using System.Data.SqlClient;
 
 namespace EntityFrameworkSample
 {
@@ -69,7 +70,8 @@ namespace EntityFrameworkSample
                 //var sw = new StreamWriter(@"f:\ef.log") { AutoFlush = true };
                 //db.Database.Log = s => { sw.Write(s); };
                 db.Database.Log = s => logger.Error(s);
-                var orders = db.Orders.Where(t => t.CustomerId == 1).ToList();
+                SqlParameter[] parameter = { };
+                var orders = db.Database.SqlQuery<Customer>("select * from Customers", parameter).ToList();
               
 
 

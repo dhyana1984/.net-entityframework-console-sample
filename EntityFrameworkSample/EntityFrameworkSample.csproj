@@ -119,13 +119,19 @@
     <Compile Include="ChrisMigrations\201809270822401_addPosts.Designer.cs">
       <DependentUpon>201809270822401_addPosts.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChrisMigrations\201809280649077_addError.cs" />
+    <Compile Include="ChrisMigrations\201809280649077_addError.Designer.cs">
+      <DependentUpon>201809280649077_addError.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChrisMigrations\Configuration.cs" />
     <Compile Include="Client\LazyLoading.cs" />
     <Compile Include="Client\RelationShipSample.cs" />
     <Compile Include="Client\SqlQuery.cs" />
     <Compile Include="Configuration\DbContextConfiguration.cs" />
+    <Compile Include="EFLog\DatabaseInterceptorLogger.cs" />
     <Compile Include="EFLog\NLogCommandInterceptor.cs" />
     <Compile Include="EFLog\SingleLineFormmatter.cs" />
+    <Compile Include="EFLog\SQLProfiler.cs" />
     <Compile Include="Entity\Course.cs" />
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\EmployeePhoto.cs" />
@@ -137,6 +143,7 @@
     <Compile Include="Map\CourseMap.cs" />
     <Compile Include="Map\CustomerMap.cs" />
     <Compile Include="Map\EmployeeMap.cs" />
+    <Compile Include="Map\ErrorMap.cs" />
     <Compile Include="Map\OrderMap.cs" />
     <Compile Include="Map\StudentsMap.cs" />
     <Compile Include="Model\Address.cs" />
@@ -145,6 +152,7 @@
     <Compile Include="Entity\Customer.cs" />
     <Compile Include="Entity\Order.cs" />
     <Compile Include="Model\CustomerInfo.cs" />
+    <Compile Include="Model\Error.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\EfDbContext.cs" />
     <Compile Include="Program.cs" />
@@ -193,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChrisMigrations\201809270822401_addPosts.resx">
       <DependentUpon>201809270822401_addPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChrisMigrations\201809280649077_addError.resx">
+      <DependentUpon>201809280649077_addError.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

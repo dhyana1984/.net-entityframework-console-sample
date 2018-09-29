@@ -14,7 +14,11 @@ namespace EntityFrameworkSample.Configuration
         public DbContextConfiguration()
         {
             // SetDatabaseLogFormatter((context, action) => new SingleLineFormmatter(context, action));
-            DbInterception.Add(new NLogCommandInterceptor());
+            //DbInterception.Add(new NLogCommandInterceptor());
+            //DbInterception.Add(new DatabaseInterceptorLogger());
+            DbInterception.Add(new SQLProfiler(@"F:\log.txt", 1));
+
+            
         }
     }
 }
