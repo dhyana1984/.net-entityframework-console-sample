@@ -123,6 +123,14 @@
     <Compile Include="ChrisMigrations\201809280649077_addError.Designer.cs">
       <DependentUpon>201809280649077_addError.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChrisMigrations\201810010346508_ClientAndClientSheet.cs" />
+    <Compile Include="ChrisMigrations\201810010346508_ClientAndClientSheet.Designer.cs">
+      <DependentUpon>201810010346508_ClientAndClientSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChrisMigrations\201810010352353_ModifyClientSheet.cs" />
+    <Compile Include="ChrisMigrations\201810010352353_ModifyClientSheet.Designer.cs">
+      <DependentUpon>201810010352353_ModifyClientSheet.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChrisMigrations\Configuration.cs" />
     <Compile Include="Client\LazyLoading.cs" />
     <Compile Include="Client\RelationShipSample.cs" />
@@ -132,6 +140,8 @@
     <Compile Include="EFLog\NLogCommandInterceptor.cs" />
     <Compile Include="EFLog\SingleLineFormmatter.cs" />
     <Compile Include="EFLog\SQLProfiler.cs" />
+    <Compile Include="Entity\Client.cs" />
+    <Compile Include="Entity\ClientSheet.cs" />
     <Compile Include="Entity\Course.cs" />
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\EmployeePhoto.cs" />
@@ -140,6 +150,8 @@
     <Compile Include="Entity\StudentCourse.cs" />
     <Compile Include="EFLog\MyLog.cs" />
     <Compile Include="Map\BlogMap.cs" />
+    <Compile Include="Map\ClientMap.cs" />
+    <Compile Include="Map\ClientSheetMap.cs" />
     <Compile Include="Map\CourseMap.cs" />
     <Compile Include="Map\CustomerMap.cs" />
     <Compile Include="Map\EmployeeMap.cs" />
@@ -157,6 +169,7 @@
     <Compile Include="Model\EfDbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\StringTrimmerInterceptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -204,6 +217,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChrisMigrations\201809280649077_addError.resx">
       <DependentUpon>201809280649077_addError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChrisMigrations\201810010346508_ClientAndClientSheet.resx">
+      <DependentUpon>201810010346508_ClientAndClientSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChrisMigrations\201810010352353_ModifyClientSheet.resx">
+      <DependentUpon>201810010352353_ModifyClientSheet.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

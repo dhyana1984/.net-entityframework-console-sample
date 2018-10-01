@@ -59,6 +59,9 @@ namespace EntityFrameworkSample.Model
         public DbSet<Post> Posts { get; set; }
         public DbSet<StudentContract> StudentContracts { get; set; }
         public DbSet<Error> Errors { get; set; }
+        public DbSet<Entity.Client> Clients { get; set; }
+        public DbSet<ClientSheet> ClientSheets { get; set; }
+
     } 
 
     //自定义全局约定

@@ -3,18 +3,16 @@ namespace EntityFrameworkSample.ChrisMigrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ModifyOrderTableName : DbMigration
+    public partial class ModifyClientSheet : DbMigration
     {
         public override void Up()
         {
-            RenameTable(name: "dbo.Oders", newName: "Orders");
-          
+            AlterColumn("dbo.ClientSheets", "Quantity", c => c.Int(nullable: false));
         }
         
         public override void Down()
         {
-           
-            RenameTable(name: "dbo.Orders", newName: "Oders");
+            AlterColumn("dbo.ClientSheets", "Quantity", c => c.String());
         }
     }
 }

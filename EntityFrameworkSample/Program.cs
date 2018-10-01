@@ -69,13 +69,39 @@ namespace EntityFrameworkSample
                 // db.Database.Log = msg => MyLog.Log("EntityLoggingDemo", msg);
                 //var sw = new StreamWriter(@"f:\ef.log") { AutoFlush = true };
                 //db.Database.Log = s => { sw.Write(s); };
-                db.Database.Log = s => logger.Error(s);
-                SqlParameter[] parameter = { };
-                var orders = db.Database.SqlQuery<Customer>("select * from Customers", parameter).ToList();
-              
+                //  db.Database.Log = s => logger.Error(s);
 
+                //db.Clients.Add(new Entity.Client()
+                //{
+                //    Id = "clientId   ",
+                //    Email = "tom@163.com",
+                //    Name = "Tom"
+                //});
 
+                //db.SaveChanges();
 
+                //db.ClientSheets.Add(new ClientSheet()
+                //{
+                //    Id = "1",
+                //    ClientId = "clientId",
+                //    Code = "001",
+                //    Price = 20,
+                //    Quantity = 1
+                //});
+
+                //db.ClientSheets.Add(new ClientSheet()
+                //{
+                //    Id = "2",
+                //    ClientId = "clientId",
+                //    Code = "002",
+                //    Price = 10,
+                //    Quantity = 2
+                //});
+
+                //db.SaveChanges();
+                var clientCount = db.Clients.First();
+                var sheetCount = db.ClientSheets.First();
+           
             }
             Console.ReadLine();
         }

@@ -1,4 +1,5 @@
 ﻿using EntityFrameworkSample.EFLog;
+using EntityFrameworkSample.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -17,6 +18,7 @@ namespace EntityFrameworkSample.Configuration
             //DbInterception.Add(new NLogCommandInterceptor());
             //DbInterception.Add(new DatabaseInterceptorLogger());
             DbInterception.Add(new SQLProfiler(@"F:\log.txt", 1));
+            AddInterceptor(new StringTrimmerInterceptor());
 
             
         }
