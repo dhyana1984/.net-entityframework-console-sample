@@ -18,6 +18,8 @@ namespace EntityFrameworkSample.Client
             //    db.SaveChanges();
 
             //    student1.Name = "Chris2";
+
+            // 简单冲突解决 
             //    try
             //    {
             //        db1.SaveChanges();
