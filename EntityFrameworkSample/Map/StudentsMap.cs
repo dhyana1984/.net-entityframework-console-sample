@@ -36,6 +36,8 @@ namespace EntityFrameworkSample.Map
 
             //HasOptional then WithOptionalDependent,Student_Id自动创建在连联系表，Contract_Id不可为空且是联系表的外键.即外键表在Student表
             HasOptional(t => t.Contract).WithOptionalDependent(l => l.Student);
+            //在 Name字段使用并发 Ticket
+            Property(t => t.Name).IsConcurrencyToken();
         }
     }
 
@@ -50,6 +52,7 @@ namespace EntityFrameworkSample.Map
             //Property(t => t.Id).HasColumnName("StudentId").HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 
             //WithOprionalPrincipal和WithOptionalDependent，主键自增
+
             Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }

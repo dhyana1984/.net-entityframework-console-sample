@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NLog;
 using System.Data.SqlClient;
+using System.Data.Entity.Infrastructure;
 
 namespace EntityFrameworkSample
 {
@@ -20,87 +21,50 @@ namespace EntityFrameworkSample
         static void Main(string[] args)
         {
             Logger logger = LogManager.GetCurrentClassLogger();
-            using (var db = new EfDbContext())
+            using(var db = new EfDbContext())
+            using (var db1 = new EfDbContext())
             {
-                //增加测试数据
-                //var customer = new Customer
-                //{
-                //    Name = "Tom",
-                //    Email = "Tom@163.com",
-                //    Orders = new List<Order>
-                //      {
-                //         new Order
-                //         {
-                //              Quanatity=100,
-                //               Price=12
-                //         },
-                //            new Order
-                //         {
-                //              Quanatity=120,
-                //               Price=10
-                //         }
-                //      },
-                //};
-                //db.Customers.Add(customer);
-                //db.SaveChanges();
+                var student = db.Students.FirstOrDefault(t=>t.Id==2);
+                var student1 = db1.Students.FirstOrDefault(t => t.Id == 2);
 
-                //var customer = GetCustomer();
-                //var dbCustomer = db.Customers.FirstOrDefault(t => t.Id == customer.Id);
-                //if(dbCustomer != null)
-                //{
-                //    //db.Customers.Attach(customer);
-                //    //db.Entry(customer).State = EntityState.Modified;
+                student.Name = "Chris1";
+                db.SaveChanges();
 
-                //    if (db.Entry(dbCustomer).State != EntityState.Unchanged)
-                //        db.Entry(dbCustomer).State = EntityState.Unchanged;
-                //    db.Entry(dbCustomer).CurrentValues.SetValues(customer);
+                student1.Name = "Chris2";
+                try
+                {
+                    db1.SaveChanges();
+                }
+                catch(DbUpdateConcurrencyException ex)
+                {
+                    //获取并发异常被追踪的实体
+                    var tracking = ex.Entries.Single();
 
-                //    if (db.SaveChanges()>0)
-                //    {
-                //        Console.WriteLine("更新成功");
-                //    }
-                //    else
-                //    {
-                //        Console.WriteLine("更新失败");
-                //    }
+                    //获取数据库原始值对象
+                    var original = (Student)tracking.OriginalValues.ToObject();
 
-                //}
+                    //获取更新后数据库最新的值对象
+                    var database = (Student)tracking.GetDatabaseValues().ToObject();
 
-                // db.Database.Log = msg => MyLog.Log("EntityLoggingDemo", msg);
-                //var sw = new StreamWriter(@"f:\ef.log") { AutoFlush = true };
-                //db.Database.Log = s => { sw.Write(s); };
-                //  db.Database.Log = s => logger.Error(s);
+                    //获取当前内存中的值对象
+                    var current = (Student)tracking.CurrentValues.ToObject();
 
-                //db.Clients.Add(new Entity.Client()
-                //{
-                //    Id = "clientId   ",
-                //    Email = "tom@163.com",
-                //    Name = "Tom"
-                //});
+                    var origin = $"原始值：{original.Name}";
+                    Console.WriteLine(origin);
 
-                //db.SaveChanges();
+                    var databaseBalue = $"数据库中值：{database.Name}";
+                    Console.WriteLine(databaseBalue);
 
-                //db.ClientSheets.Add(new ClientSheet()
-                //{
-                //    Id = "1",
-                //    ClientId = "clientId",
-                //    Code = "001",
-                //    Price = 20,
-                //    Quantity = 1
-                //});
+                    var update = $"更新的值：{current.Name}";
+                    Console.WriteLine(update);
 
-                //db.ClientSheets.Add(new ClientSheet()
-                //{
-                //    Id = "2",
-                //    ClientId = "clientId",
-                //    Code = "002",
-                //    Price = 10,
-                //    Quantity = 2
-                //});
-
-                //db.SaveChanges();
-                var clientCount = db.Clients.First();
-                var sheetCount = db.ClientSheets.First();
+                    ex.Entries.Single().Reload();
+                    tracking.OriginalValues.SetValues(tracking.GetDatabaseValues());
+                    db1.SaveChanges();
+              
+                }
+              
+                    
            
             }
             Console.ReadLine();
